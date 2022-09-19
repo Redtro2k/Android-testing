@@ -11,6 +11,10 @@ import com.google.android.material.snackbar.Snackbar
 import org.w3c.dom.Text
 
 class MainActivity : AppCompatActivity() {
+    fun sum(num1: Int, num2: Int): Int
+    {
+        return num1 + num2;
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -33,12 +37,11 @@ class MainActivity : AppCompatActivity() {
         val toast = Toast.makeText(applicationContext, "This is toast", Toast.LENGTH_SHORT).show()
         //button
         btnclickme.setOnClickListener{ view->
-            var num1 : Number; var num2 : Number; var total: Number;
+            var num1 : Number; var num2 : Number;
             num1 = txt_num_1.text.toString().toInt();
             num2 = txt_num_2.text.toString().toInt();
-            total = num1 + num2;
 
-            testing.setText(total.toString())
+            testing.setText("Sum: ${sum(num1,num2)}")
         }
     }
 }
